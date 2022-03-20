@@ -1,0 +1,18 @@
+plugins {
+    id 'java'
+    id 'antlr'
+    id 'maven-publish'
+}
+
+group 'info.developia.opia'
+version '1.0.0-SNAPSHOT'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    antlr "org.antlr:antlr4:4.9.3"
+    implementation "org.antlr:antlr4-runtime:4.9.3"
+}
