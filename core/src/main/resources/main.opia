@@ -1,5 +1,5 @@
-a = 100
-b = 150
+var a = 100
+var b = 150
 show 10
 show a
 show b

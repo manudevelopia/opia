@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class OpiaWalker extends OpiaBaseListener {
-    Map<String, Integer> variableMap = new HashMap<>();
+    final Map<String, String> variableMap = new HashMap<>();
 
     public void exitShow(OpiaParser.ShowContext ctx) {
         if (ctx.INT() != null) {
@@ -15,6 +15,6 @@ public class OpiaWalker extends OpiaBaseListener {
     }
 
     public void exitLet(OpiaParser.LetContext ctx) {
-        this.variableMap.put(ctx.VAR().getText(), Integer.parseInt(ctx.INT().getText()));
+        this.variableMap.put(ctx.VAR().getText(), ctx.INT().getText());
     }
 }
