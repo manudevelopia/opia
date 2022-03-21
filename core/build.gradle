@@ -1,11 +1,12 @@
 plugins {
+    id 'com.github.johnrengelman.shadow' version '7.1.2'
     id 'java'
     id 'antlr'
     id 'maven-publish'
 }
 
 group 'info.developia.opia'
-version '1.0.0-SNAPSHOT'
+version '1.0-SNAPSHOT'
 
 repositories {
     mavenLocal()
@@ -16,3 +17,5 @@ dependencies {
     antlr "org.antlr:antlr4:4.9.3"
     implementation "org.antlr:antlr4-runtime:4.9.3"
 }
+
+compileJava.dependsOn generateGrammarSource
