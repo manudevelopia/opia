@@ -1,11 +1,20 @@
 package info.developia.opia;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class OpiaWalker extends OpiaBaseListener {
-    public void enterR(OpiaParser.RContext ctx) {
-        System.out.println("Entering R : " + ctx.ID().getText());
+    Map<String, Integer> variableMap = new HashMap<>();
+
+    public void exitShow(OpiaParser.ShowContext ctx) {
+        if (ctx.INT() != null) {
+            System.out.println(ctx.INT().getText());
+        } else if (ctx.VAR() != null) {
+            System.out.println(this.variableMap.get(ctx.VAR().getText()));
+        }
     }
 
-    public void exitR(OpiaParser.RContext ctx) {
-        System.out.println("Exiting R");
+    public void exitLet(OpiaParser.LetContext ctx) {
+        this.variableMap.put(ctx.VAR().getText(), Integer.parseInt(ctx.INT().getText()));
     }
 }
