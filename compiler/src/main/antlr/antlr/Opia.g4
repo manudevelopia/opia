@@ -1,5 +1,8 @@
-//header
 grammar Opia;
+
+@header {
+package info.developia.opia;
+}
 
 //parser rules
 compilationUnit : ( variable | print )* EOF; //root rule - globally code consist only of variables and prints (see definition below)

@@ -1,0 +1,7 @@
+class HelloWorld {
+    var name = "manu"
+
+    def say(string name) {
+        print(name)
+    }
+}
