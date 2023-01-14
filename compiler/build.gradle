@@ -13,6 +13,7 @@ repositories {
 
 dependencies {
     antlr "org.antlr:antlr4:4.9.3"
+    implementation 'org.ow2.asm:asm:9.4'
 
     testImplementation 'org.codehaus.groovy:groovy:3.0.7'
     testImplementation 'org.spockframework:spock-core:2.1-groovy-3.0'
