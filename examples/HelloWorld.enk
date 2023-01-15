@@ -1,4 +1,5 @@
-HelloWorldaaaa {
+HelloWorld {
+
     start {
         print "hello world!"
     }

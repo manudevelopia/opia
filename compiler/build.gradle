@@ -1,6 +1,5 @@
 plugins {
     id 'java'
-    id 'antlr'
     id 'groovy'
 }
 
@@ -12,16 +11,20 @@ repositories {
 }
 
 dependencies {
-    antlr "org.antlr:antlr4:4.9.3"
-    implementation 'org.ow2.asm:asm:9.4'
+    implementation project(':grammar')
 
-    testImplementation 'org.codehaus.groovy:groovy:3.0.7'
-    testImplementation 'org.spockframework:spock-core:2.1-groovy-3.0'
+    implementation 'org.ow2.asm:asm:9.4'
+    implementation 'com.google.guava:guava:31.1-jre'
+    implementation 'org.apache.commons:commons-collections4:4.4'
+    implementation 'org.apache.commons:commons-lang3:3.12.0'
+    implementation 'org.slf4j:slf4j-api:2.0.5'
+    implementation 'org.slf4j:slf4j-log4j12:2.0.5'
+
+    testImplementation 'org.codehaus.groovy:groovy:3.0.14'
+    testImplementation 'org.spockframework:spock-core:2.3-groovy-3.0'
     testImplementation 'junit:junit:4.13.2'
 }
 
 test {
     useJUnitPlatform()
 }
-
-compileJava.dependsOn generateGrammarSource

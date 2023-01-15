@@ -1,0 +1,18 @@
+plugins {
+    id 'antlr'
+    id 'java-library'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    antlr 'org.antlr:antlr4:4.11.1'
+}
+
+compileJava.dependsOn generateGrammarSource
+
+generateGrammarSource {
+    arguments += ["-visitor"]
+}
